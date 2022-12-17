@@ -20,8 +20,8 @@ const EvaluacionesForm = () => {
 
     return (
         <div>
-            <br/><br/><br/><br/>
-            <h2>Crear evaluación: </h2>
+            <br/><br/><br/>
+            <h3>Crear evaluación: </h3>
             <br/>
             <form>
             <label>   
