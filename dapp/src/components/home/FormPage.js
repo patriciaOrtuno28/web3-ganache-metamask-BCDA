@@ -25,7 +25,7 @@ function FormPage() {
                     onChange={(e) => setAddress(e.target.value)}
                 />
             </label>
-            <button onClick={handleSubmit}>Cambiar</button>
+            <button class="button-6" onClick={handleSubmit}>Cambiar</button>
             </form>
         </div>
     );

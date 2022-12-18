@@ -19,10 +19,8 @@ const EvaluacionesForm = () => {
     }
 
     return (
-        <div>
-            <br/><br/><br/>
+        <div style={{marginInlineEnd: '10rem'}}>
             <h3>Crear evaluación: </h3>
-            <br/>
             <form>
             <label>   
                 <span>Nombre:   </span>
@@ -58,7 +56,7 @@ const EvaluacionesForm = () => {
                 />
             </label>
             <br/>
-            <button onClick={handleSubmit}>Crear</button>
+            <button class="button-6" onClick={handleSubmit}>Crear</button>
             </form>
         </div>
     );

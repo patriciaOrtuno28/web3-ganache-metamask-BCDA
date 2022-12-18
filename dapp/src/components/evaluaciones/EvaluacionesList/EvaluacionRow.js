@@ -29,7 +29,7 @@ const EvaluacionRow = ({evaluacionIndex}) => {
             <td>{ev?.porcentaje}</td>
             <td>{ev?.minimo}</td>
             <td>
-                <Popup trigger={<button>Editar</button>} position="right center">
+                <Popup trigger={<button class="button-6">Editar</button>} position="right center">
                 <form>
                     <label>   
                         <span>Nombre:   </span>
@@ -65,7 +65,7 @@ const EvaluacionRow = ({evaluacionIndex}) => {
                         />
                     </label>
                     <br/>
-                    <button onClick={handleSubmit}>Editar</button>
+                    <button class="button-6" onClick={handleSubmit}>Editar</button>
                 </form>
                 </Popup>
             </td>

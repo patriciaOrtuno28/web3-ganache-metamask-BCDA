@@ -13,8 +13,8 @@ function FormClosePage() {
 
     return (
         <form>
-            <span>¿Desea cerrar la asignatura?  </span>
-            <button onClick={handleSubmit}>Sí</button>
+            <p>¿Desea cerrar la asignatura?  </p>
+            <button class="button-6" onClick={handleSubmit}>Sí</button>
         </form>
     );
 }

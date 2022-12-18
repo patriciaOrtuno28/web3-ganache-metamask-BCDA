@@ -15,16 +15,18 @@ const EvaluacionesList = () => {
     const address = state.accounts[0];
 
     return (
-        <section className="AppEvaluaciones">
-            <h3>Todas las Evaluaciones</h3>
+        <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', marginInline: '0.5rem'}}>
+            <div style={{display: 'flex', flexDirection: 'column'}}>
+                <h3>Todas las Evaluaciones</h3>
 
-            <table>
-                <EvaluacionesHead/>
-                <EvaluacionesBody/>
-            </table>
+                <table>
+                    <EvaluacionesHead/>
+                    <EvaluacionesBody/>
+                </table>
+            </div>
 
             {coordinador === address ? <EvaluacionesForm/> : <div></div>}
-        </section>
+        </div>
     )
 };
 

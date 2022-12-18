@@ -1,5 +1,5 @@
 .App {
-  margin: 10px;
+  margin: 16px;
 }
 
 .AppHeader {
@@ -42,15 +42,23 @@ nav ul li a:hover {
 
 table {
   border-collapse: collapse;
+  box-sizing: border-box;
+  padding: 1.2rem;
+  border-radius: 1rem;
+  background-color: hsl(0, 0%, 100%);
+  border: 4px solid hsl(0, 0%, 90%);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.18);
+	-moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.18);
+	-webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.18);
 }
 
-table, th, td {
+th, td {
   border: 1px solid black;
 }
 
 th, td {
-  padding: 5px;
-  text-align: left;
+  padding: 0.6rem;
+  text-align: center;
 }
 
 tr:nth-child(even) {
@@ -59,4 +67,89 @@ tr:nth-child(even) {
 
 th {
   background-color: #f2f2f2;
+}
+
+/** Forms */
+form {
+  box-sizing: border-box;
+  padding: 1.2rem;
+  border-radius: 1rem;
+  background-color: hsl(0, 0%, 100%);
+  border: 4px solid hsl(0, 0%, 90%);
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.18);
+	-moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.18);
+	-webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.18);
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="number"]
+{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	outline: none;
+	display: block;
+	width: 100%;
+	padding: 7px;
+	border: none;
+	border-bottom: 1px solid #ddd;
+	background: transparent;
+	margin-bottom: 10px;
+	font: 16px system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	height: 45px;
+}
+
+/** Buttons */
+.button-6 {
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 0.2;
+  margin: 0;
+  min-height: 1rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.08);
+	-moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.08);
+	-webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.08);
+}
+
+.button-6:hover,
+.button-6:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.button-6:hover {
+  transform: translateY(-1px);
+}
+
+.button-6:active {
+  background-color: #F0F0F1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
 }

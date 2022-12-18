@@ -3,23 +3,25 @@ import { useState } from 'react';
 
 const {useDrizzle} = drizzleReactHooks;
 
-const ProfesoresForm = () => {
+const AlumnosForm = () => {
 
-    const [nombre, setNombre] = useState("");
     const [address, setAddress] = useState("");
+    const [nombre, setNombre] = useState("");
+    const [dni, setDni] = useState("");
+    const [email, setEmail] = useState("");
 
     const { useCacheSend } = useDrizzle();
-    const {send, } = useCacheSend('Asignatura', 'addProfesor');
+    const {send, } = useCacheSend('Asignatura', 'matricular');
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        send(address, nombre);
+        send(address, nombre, dni, email);
     }
 
     return (
         <div>
             <br/><br/><br/>
-            <h3>Crear profesor: </h3>
+            <h3>Matricular alumno: </h3>
             <br/>
             <form>
             <label>   
@@ -38,10 +40,26 @@ const ProfesoresForm = () => {
                 />
             </label>
             <br/>
-            <button class="button-6" onClick={handleSubmit}>Crear</button>
+            <label>   
+                <span>DNI:   </span>
+                <input type="text" 
+                    value={dni}
+                    onChange={(e) => setDni(e.target.value)}
+                />
+            </label>
+            <br/>
+            <label>   
+                <span>Email:   </span>
+                <input type="text" 
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                />
+            </label>
+            <br/>
+            <button class="button-6" onClick={handleSubmit}>Matricular</button>
             </form>
         </div>
     );
 }
 
-export default ProfesoresForm;
+export default AlumnosForm;
