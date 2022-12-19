@@ -5,11 +5,16 @@ const {useDrizzle, useDrizzleState} = drizzleReactHooks;
 
 const SoyProfesor = ({children}) => {
     const {useCacheCall} = useDrizzle();
-    const drizzleState = useDrizzleState(state => state);
+    const state = useDrizzleState(state => state);
 
-    const profesorAddr = useCacheCall("Asignatura", "profesor");
+    const address = state.accounts[0];
 
-    if (profesorAddr !== drizzleState.accounts[0]) {
+    var hasPermission = false;
+
+    const datos = useCacheCall("Asignatura", "datosProfesor", address);
+    if (datos) hasPermission = true;
+
+    if (!hasPermission) {
         return null
     }
     return <>

@@ -112,7 +112,7 @@ const Calificar2 = () => {
                            onChange={ev => setCalificacion(ev.target.value)}/>
                 </p>
 
-                <button key="submit" className="pure-button" type="button"
+                <button key="submit" className="button-6" type="button"
                         onClick={ev => {
                             ev.preventDefault();
                             const stackId = drizzle.contracts.Asignatura.methods.califica.cacheSend(alumnoAddr, indexEval, tipo, calificacion);

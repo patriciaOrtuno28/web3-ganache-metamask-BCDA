@@ -3,7 +3,7 @@ import {useState} from 'react';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 
-const {useDrizzle} = drizzleReactHooks;
+const {useDrizzle, useDrizzleState} = drizzleReactHooks;
 
 const EvaluacionRow = ({evaluacionIndex}) => {
     const {useCacheCall, useCacheSend} = useDrizzle();
@@ -22,6 +22,11 @@ const EvaluacionRow = ({evaluacionIndex}) => {
         send(evaluacionIndex>>>0, nombre, fecha>>>0, porcentaje>>>0, min>>>0);
     }
 
+    const coordinador = useCacheCall("Asignatura", "coordinador");
+
+    const state = useDrizzleState(state => state);
+    const address = state.accounts[0];
+
     return <tr key={"EVA-" + evaluacionIndex}>
             <th>E<sub>{evaluacionIndex}</sub></th>
             <td>{ev?.nombre}</td>
@@ -29,7 +34,8 @@ const EvaluacionRow = ({evaluacionIndex}) => {
             <td>{ev?.porcentaje}</td>
             <td>{ev?.minimo}</td>
             <td>
-                <Popup trigger={<button class="button-6">Editar</button>} position="right center">
+                <Popup trigger={(coordinador === address) ? <button class="button-6">Editar</button>: <div></div>} 
+                    position="right center">
                 <form>
                     <label>   
                         <span>Nombre:   </span>

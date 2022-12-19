@@ -4,6 +4,7 @@ import CalificacionesBody from "./CalificacionesBody";
 const CalificacionesPage = () => {
 
     return (
+       
         <section className="AppCalificaciones">
             <h3>Todas las Calificaciones</h3>
             <table>
@@ -11,6 +12,7 @@ const CalificacionesPage = () => {
                 <CalificacionesBody />
             </table>
         </section>
+
     );
 };
 

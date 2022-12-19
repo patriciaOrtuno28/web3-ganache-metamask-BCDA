@@ -253,6 +253,7 @@ function modificaEvaluacion(uint _id, string memory _nombre, uint _fecha, uint _
     require(bytes(_nombre).length !=0, "El nombre de la evaluacion no puede ser vacio");
     require(_id < evaluaciones.length, "El identificador no puede ser mayor que la cantidad de evaluaciones");
 
+    delete evaluaciones[_id];
     Evaluacion memory newEv = Evaluacion(_nombre, _fecha, _porcentaje, _minimo);
     evaluaciones[_id] = newEv;
 }
