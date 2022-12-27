@@ -1,6 +1,6 @@
 truffle/node_modules
 
-truffle/build
+truffle/build/*
 
 node_modules
 
