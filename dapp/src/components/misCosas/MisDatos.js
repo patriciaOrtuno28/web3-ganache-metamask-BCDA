@@ -1,4 +1,5 @@
-import {drizzleReactHooks} from '@drizzle/react-plugin'
+import {drizzleReactHooks} from '@drizzle/react-plugin';
+import DatosProfesor from "./DatosProfesor";
 
 const {useDrizzle, useDrizzleState} = drizzleReactHooks;
 
@@ -10,7 +11,6 @@ const MisDatos = ({rol}) => {
     const balance = drizzleState.accountBalances[address];
 
     const datosAlumno = useCacheCall("Asignatura", "quienSoy", {from: address});
-    const datosProfesor = useCacheCall("Asignatura", "datosProfesor", {from: address});
 
     return (
         <article className="AppMisDatos">
@@ -27,7 +27,7 @@ const MisDatos = ({rol}) => {
                 }
                 {
                     (rol === "Profesor") &&
-                    <li>Nombre: <span style={{color: "blue"}}>{datosProfesor}</span></li>
+                    <DatosProfesor address={address} />
                 }
                 <li>Dirección: <span style={{color: "blue"}}>{address}</span></li>
                 <li>Balance: <span style={{color: "blue"}}>{balance}</span> weis</li>
