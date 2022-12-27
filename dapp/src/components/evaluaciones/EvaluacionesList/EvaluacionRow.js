@@ -34,7 +34,7 @@ const EvaluacionRow = ({evaluacionIndex}) => {
             <td>{ev?.porcentaje}</td>
             <td>{ev?.minimo}</td>
             <td>
-                <Popup trigger={(coordinador === address) ? <button class="button-6">Editar</button>: <div></div>} 
+                <Popup trigger={(coordinador === address) ? <button className="button-6">Editar</button>: <div></div>} 
                     position="right center">
                 <form>
                     <label>   
@@ -71,7 +71,7 @@ const EvaluacionRow = ({evaluacionIndex}) => {
                         />
                     </label>
                     <br/>
-                    <button class="button-6" onClick={handleSubmit}>Editar</button>
+                    <button className="button-6" onClick={handleSubmit}>Editar</button>
                 </form>
                 </Popup>
             </td>

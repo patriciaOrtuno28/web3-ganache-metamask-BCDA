@@ -1,4 +1,5 @@
 import {drizzleReactHooks} from '@drizzle/react-plugin';
+import DisplayNota from "./DisplayNota";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import {useState} from 'react';
@@ -7,10 +8,10 @@ import 'reactjs-popup/dist/index.css';
 
 const {useDrizzle, useDrizzleState} = drizzleReactHooks;
 
-const CalificacionRow = ({alumnoIndex}) => {
+const CalificacionRow = ({alumnoIndex, showNF}) => {
     const {useCacheCall, useCacheSend} = useDrizzle();
 
-    const [nota, setNota] = useState(0);
+    const [notaNueva, setNotaNueva] = useState(0);
     const [ev, setEv] = useState(0);
 
     // Obtener permisos de profesor
@@ -32,7 +33,7 @@ const CalificacionRow = ({alumnoIndex}) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        send(alumnoAddr, ev, "2", nota);
+        send(alumnoAddr, ev, "2", notaNueva);
     }
 
     // Obtener nota del alumno
@@ -57,11 +58,11 @@ const CalificacionRow = ({alumnoIndex}) => {
                             <label>   
                                 <span>Nota:   </span>
                                 <input type="number" 
-                                    value={nota}
-                                    onChange={(e) => setNota(e.target.value)}
+                                    value={notaNueva}
+                                    onChange={(e) => {setNotaNueva(e.target.value); setEv(ei);}}
                                 />
                             </label>
-                            <button class="button-6" onClick={() => {setEv(ei); handleSubmit(); }}>Editar</button>
+                            <button className="button-6" onClick={handleSubmit}>Editar</button>
                         </form>
                     </Popup>
                 </td>
@@ -70,10 +71,16 @@ const CalificacionRow = ({alumnoIndex}) => {
         return cells;
     });
 
+    const coordinador = useCacheCall("Asignatura", "coordinador");
+
     return <tr key={"d" + alumnoIndex}>
             <th>A<sub>{alumnoIndex}</sub></th>
             <td>{alumnoName}</td>
             {cells}
+            {
+                (address === coordinador) &&
+                <td>{showNF && <DisplayNota alumnoAddr={alumnoAddr}/>}</td>
+            }
         </tr>;
 };
 

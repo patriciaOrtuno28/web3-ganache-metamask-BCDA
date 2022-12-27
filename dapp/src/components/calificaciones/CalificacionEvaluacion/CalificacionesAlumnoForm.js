@@ -13,7 +13,7 @@ const CalificacionesAlumnoForm = ({address}) => {
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginInlineEnd: '10rem'}}>
             <form style={{alignContent: 'center'}}>
             <h3>¿Deseas ver tus notas?</h3>
-            <button class="button-6" onClick={handleSubmit}>¡Adelante!</button>
+            <button className="button-6" onClick={handleSubmit}>¡Adelante!</button>
             </form>
             {
                 showGrades && 

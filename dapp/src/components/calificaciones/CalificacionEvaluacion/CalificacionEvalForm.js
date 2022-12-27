@@ -23,7 +23,7 @@ const CalificacionEvalForm = () => {
                     onChange={(e) => setIndex(e.target.value)}
                 />
             </label>
-            <button class="button-6" onClick={handleSubmit}>Obtener</button>
+            <button className="button-6" onClick={handleSubmit}>Obtener</button>
             </form>
             {
                 showEvTable && 
